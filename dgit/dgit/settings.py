@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
+    'user',
+
 
 ]
 
@@ -76,7 +78,7 @@ DATABASES = {
         'NAME': 'User',
         'HOST': 'localhost',
         'PORT':  3306,
-        'USER': 'admin_',
+        'USER': 'root',
         'PASSWORD': '123456',
 
     }
