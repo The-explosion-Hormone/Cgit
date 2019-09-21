@@ -26,3 +26,16 @@ class User(models.Model):
     avatar = models.CharField(max_length=256, verbose_name="个人头像")
     location = models.CharField(max_length=20, choices= LOCATION , verbose_name="常居地")
 
+
+def to_dict(self):
+    return {
+
+        'phonenum' : self.phonenum,
+        'nickname' :self.nickname,
+        'sex': self.sex,
+        'birthday' : self.birthday,
+        'avatar' : self.avatar,
+        'location' : self.location,
+
+    }
+    
