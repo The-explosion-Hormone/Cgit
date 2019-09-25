@@ -1,16 +1,29 @@
+import os
 
-from django.core.cache import cache
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect
+from django.core.cache import cache
 
-from common import keys, stat
+from common import keys
+from common import stat
+from dgit import cfg
 from user import logics
+
+
+
+
 
 #获取短信验证码
 from user.models import User
 
 
+def haha(request):
+    print(22211111111)
+
+
+
 def get_vcode(request):
+    print(111111111111111)
 
     phonenum = request.GET.get('phonenum')
 
@@ -42,8 +55,8 @@ def check_vcode(request):
                 phonenum = phonenum,
                 nickname = phonenum,
             )
-        request.session['uid'] = user.id#随便写，目的是让session发生改变
-        return JsonResponse({'code':stat.OK,'data':})
+        request.session['uid'] = user.id#随便写，目的是让session发生改变，然后让用户的账户被session
+        return JsonResponse({'code':stat.OK,'data':None})
 
     else:
         return JsonResponse({'code':stat.INVILD_VCODE, 'data':None})

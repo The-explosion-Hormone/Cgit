@@ -9,6 +9,8 @@ from common import keys
 from dgit import cfg
 
 
+
+
 #产生验证码
 def gen_randcode(length):
 
